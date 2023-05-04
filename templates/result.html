@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container-fluid custom-bg py-3">
+
+        <header class="text-white">
+            <h3 class="text-center display-4"> Music Genre Classification </h3>
+            <p class="text-center lead mb-5"> Upload a csv file of the parameters and classify the genre </p>    
+        </header>
+
+        <header class="text-white text-center">
+            <h1 class="display-5"> File Attribute </h1>
+
+            {% if attrib %}
+                <h2 class="display-4 text-green font-weight-bold"> File Attributes </h2>
+
+                {% for key, value in attrib.items() %}
+                    <p> {{ key }}: {{ value }}</p>
+                {% endfor %}
+
+            {% else %}
+                <h2 class="display-4 text-green font-weight-bold">{{err}}</h2>
+            {% endif %}
+        </header>
+    </div>
+{% endblock content %}

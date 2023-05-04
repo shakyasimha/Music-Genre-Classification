@@ -5,34 +5,15 @@
 
         <header class="text-white">
             <h3 class="text-center display-4"> Music Genre Classification </h3>
-            <p class="text-center lead mb-5"> Upload a music file and classify the genre </p>    
+            <p class="text-center lead mb-5"> Upload a csv file of the parameters and classify the genre </p>    
         </header>
 
         <div class="row py-4">
             <div class="col-lg-6 mx-auto">
-    
-                <!-- Upload audio input-->
-                <form action="{{ url_for('classify_audio') }}" enctype="multipart/form-data" method="POST">
-                    <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-                        <input class="form-control border-0" id="upload" name="file" type="file">
-                        <label class="font-weight-light text-muted" for="upload" id="upload-label"></label>
-                        <div class="input-group-append">
-                            <label class="btn btn-light m-0 rounded-pill px-4" for="upload"> <i
-                                    class="fa fa-cloud-upload mr-2 text-muted"></i><small
-                                    class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
-                        </div>
-                    </div>
-    
-                    <!-- Submit button-->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col text-center">
-                                <input class="btn btn-primary my-3" type="submit"/>
-                            </div>
-                        </div>
-                    </div>
+                <form action="{{ url_for('upload_file') }}" enctype="multipart/form-data" method="POST">
+                    <input type="file" id="inputFile" name="file"> 
+                    <input type="submit" id="submitFile">
                 </form>
-    
             </div>
     </div>
 {% endblock %}
